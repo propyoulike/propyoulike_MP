@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import BuilderManagement from '@/components/BuilderManagement';
-import BuilderLandingPageEditor from '@/components/BuilderLandingPageEditor';
+import LocalBuilderManagement from '@/components/LocalBuilderManagement';
+import LocalProjectManagement from '@/components/LocalProjectManagement';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent } from '@/components/ui/card';
-import { Building, FileText, Settings, Users } from 'lucide-react';
+import { Building, FileText, Settings, Users, Home } from 'lucide-react';
 
 const Admin = () => {
   const { user, loading } = useAuth();
@@ -50,22 +50,26 @@ const Admin = () => {
       
       <main className="py-8">
         <div className="container mx-auto px-4">
-          <div className="mb-8">
-            <h1 className="text-4xl font-bold mb-4">Admin Panel</h1>
-            <p className="text-muted-foreground text-lg">
-              Manage builders, create landing pages, and configure your platform.
-            </p>
-          </div>
+            <div className="mb-8 text-center">
+              <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Admin Panel</h1>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                Manage builders, create projects with templates, and configure your real estate platform.
+              </p>
+            </div>
 
           <Tabs defaultValue="builders" className="w-full">
-            <TabsList className="grid w-full grid-cols-4 mb-8">
+            <TabsList className="grid w-full grid-cols-5 mb-8">
               <TabsTrigger value="builders" className="flex items-center space-x-2">
                 <Building className="h-4 w-4" />
-                <span>Manage Builders</span>
+                <span>Builders</span>
               </TabsTrigger>
-              <TabsTrigger value="landing-pages" className="flex items-center space-x-2">
+              <TabsTrigger value="projects" className="flex items-center space-x-2">
+                <Home className="h-4 w-4" />
+                <span>Projects</span>
+              </TabsTrigger>
+              <TabsTrigger value="templates" className="flex items-center space-x-2">
                 <FileText className="h-4 w-4" />
-                <span>Landing Pages</span>
+                <span>Templates</span>
               </TabsTrigger>
               <TabsTrigger value="users" className="flex items-center space-x-2">
                 <Users className="h-4 w-4" />
@@ -78,11 +82,23 @@ const Admin = () => {
             </TabsList>
 
             <TabsContent value="builders">
-              <BuilderManagement />
+              <LocalBuilderManagement />
             </TabsContent>
 
-            <TabsContent value="landing-pages">
-              <BuilderLandingPageEditor />
+            <TabsContent value="projects">
+              <LocalProjectManagement />
+            </TabsContent>
+
+            <TabsContent value="templates">
+              <Card>
+                <CardContent className="p-8 text-center">
+                  <FileText className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
+                  <h3 className="text-xl font-semibold mb-2">Template Management</h3>
+                  <p className="text-muted-foreground">
+                    Template customization and management will be available in a future update.
+                  </p>
+                </CardContent>
+              </Card>
             </TabsContent>
 
             <TabsContent value="users">
