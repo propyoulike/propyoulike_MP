@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => ({
   // 👇 Dev server settings
   server: {
     host: "::",
-    port: 8081,
+    port: 8080,
     strictPort: true,
     open: "/",
   },
