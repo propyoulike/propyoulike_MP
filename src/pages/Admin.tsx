@@ -1,17 +1,20 @@
 import { useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
+import { useRoles } from '@/hooks/useRoles';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import LocalBuilderManagement from '@/components/LocalBuilderManagement';
-import LocalProjectManagement from '@/components/LocalProjectManagement';
+import BuilderManagement from '@/components/BuilderManagement';
+import ProjectManagement from '@/components/ProjectManagement';
+import UserManagement from '@/components/UserManagement';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent } from '@/components/ui/card';
-import { Building, FileText, Settings, Users, Home } from 'lucide-react';
+import { Building, FileText, Settings, Users, Home, Shield } from 'lucide-react';
 
 const Admin = () => {
   const { user, loading } = useAuth();
+  const { isAdmin, loading: roleLoading } = useRoles();
 
-  if (loading) {
+  if (loading || roleLoading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
@@ -22,7 +25,7 @@ const Admin = () => {
     );
   }
 
-  if (!user) {
+  if (!user || !isAdmin) {
     return (
       <div className="min-h-screen bg-background">
         <Header />
@@ -30,10 +33,10 @@ const Admin = () => {
           <div className="container mx-auto px-4 text-center">
             <Card className="max-w-md mx-auto">
               <CardContent className="p-8">
-                <Settings className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
+                <Shield className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
                 <h1 className="text-2xl font-bold mb-2">Admin Access Required</h1>
                 <p className="text-muted-foreground mb-6">
-                  Please log in to access the admin panel.
+                  {!user ? 'Please log in to access the admin panel.' : 'You need admin privileges to access this panel.'}
                 </p>
               </CardContent>
             </Card>
@@ -82,11 +85,11 @@ const Admin = () => {
             </TabsList>
 
             <TabsContent value="builders">
-              <LocalBuilderManagement />
+              <BuilderManagement />
             </TabsContent>
 
             <TabsContent value="projects">
-              <LocalProjectManagement />
+              <ProjectManagement />
             </TabsContent>
 
             <TabsContent value="templates">
@@ -102,15 +105,7 @@ const Admin = () => {
             </TabsContent>
 
             <TabsContent value="users">
-              <Card>
-                <CardContent className="p-8 text-center">
-                  <Users className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-                  <h3 className="text-xl font-semibold mb-2">User Management</h3>
-                  <p className="text-muted-foreground">
-                    User management features will be available in a future update.
-                  </p>
-                </CardContent>
-              </Card>
+              <UserManagement />
             </TabsContent>
 
             <TabsContent value="settings">
