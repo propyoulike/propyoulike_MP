@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'playfair': ['Playfair Display', 'serif'],
+        'inter': ['Inter', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +61,8 @@ export default {
         'property-card': "hsl(var(--property-card))",
         'price-text': "hsl(var(--price-text))",
         'location-text': "hsl(var(--location-text))",
+        'widget-bg': "hsl(var(--widget-bg))",
+        'widget-hover': "hsl(var(--widget-hover))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

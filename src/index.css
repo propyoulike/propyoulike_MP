@@ -2,60 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* PropYoulike Real Estate Design System - All colors MUST be HSL */
+/* PropYoulike Luxury Real Estate Design System - Netflix-inspired */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 215 16% 47%;
+    --background: 217 25% 8%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 16% 47%;
+    --card: 220 15% 12%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 16% 47%;
+    --popover: 220 15% 12%;
+    --popover-foreground: 210 40% 98%;
 
-    /* Real Estate Brand Colors */
-    --primary: 220 91% 50%;
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 220 91% 45%;
+    /* Luxury Brand Colors - Deep & Rich */
+    --primary: 45 90% 65%;
+    --primary-foreground: 220 15% 12%;
+    --primary-hover: 45 90% 60%;
 
-    --secondary: 24 100% 50%;
+    --secondary: 280 85% 65%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-hover: 24 100% 45%;
+    --secondary-hover: 280 85% 60%;
 
-    --success: 142 76% 36%;
+    --success: 120 60% 50%;
     --success-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 217 20% 18%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 210 40% 96%;
-    --accent-foreground: 215 16% 47%;
+    --accent: 217 20% 18%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 31% 91%;
-    --input: 214 31% 91%;
-    --ring: 220 91% 50%;
+    --border: 217 20% 20%;
+    --input: 217 20% 18%;
+    --ring: 45 90% 65%;
 
-    /* Real Estate Specific Colors */
-    --hero-bg: 220 91% 50%;
-    --hero-gradient: linear-gradient(135deg, hsl(220, 91%, 50%), hsl(220, 91%, 35%));
-    --property-card: 0 0% 100%;
-    --price-text: 142 76% 36%;
-    --location-text: 215 16% 47%;
+    /* Luxury Real Estate Colors */
+    --hero-bg: 217 25% 8%;
+    --property-card: 220 15% 12%;
+    --price-text: 45 90% 65%;
+    --location-text: 215 20% 65%;
+    --widget-bg: 217 20% 10%;
+    --widget-hover: 217 20% 15%;
     
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1);
-    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1);
+    /* Luxury Shadows with Warm Glow */
+    --shadow-sm: 0 1px 2px 0 hsl(45 90% 65% / 0.1);
+    --shadow-md: 0 4px 12px -2px hsl(45 90% 65% / 0.15);
+    --shadow-lg: 0 20px 25px -5px hsl(45 90% 65% / 0.2);
+    --shadow-xl: 0 25px 50px -12px hsl(45 90% 65% / 0.25);
+    --shadow-glow: 0 0 40px hsl(45 90% 65% / 0.3);
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(220, 91%, 50%) 0%, hsl(220, 91%, 35%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(210, 40%, 98%) 100%);
+    /* Luxury Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(217, 25%, 8%) 0%, hsl(217, 20%, 12%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(220, 15%, 12%) 0%, hsl(217, 20%, 15%) 100%);
+    --gradient-widget: linear-gradient(145deg, hsl(217, 20%, 10%) 0%, hsl(217, 20%, 15%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(45, 90%, 65%) 0%, hsl(45, 85%, 55%) 100%);
 
     --radius: 0.5rem;
 
@@ -77,47 +81,49 @@
   }
 
   .dark {
-    --background: 222 84% 5%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 100%;
+    --foreground: 215 16% 47%;
 
-    --card: 222 84% 5%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 16% 47%;
 
-    --popover: 222 84% 5%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 16% 47%;
 
-    --primary: 220 91% 50%;
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 220 91% 45%;
+    --primary: 45 90% 65%;
+    --primary-foreground: 220 15% 12%;
+    --primary-hover: 45 90% 60%;
 
-    --secondary: 24 100% 50%;
+    --secondary: 280 85% 65%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-hover: 24 100% 45%;
+    --secondary-hover: 280 85% 60%;
 
-    --success: 142 76% 36%;
+    --success: 120 60% 50%;
     --success-foreground: 0 0% 100%;
 
-    --muted: 217 33% 18%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 217 33% 18%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 215 16% 47%;
 
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217 33% 18%;
-    --input: 217 33% 18%;
-    --ring: 220 91% 50%;
+    --border: 214 31% 91%;
+    --input: 214 31% 91%;
+    --ring: 45 90% 65%;
 
-    --hero-bg: 220 91% 40%;
-    --hero-gradient: linear-gradient(135deg, hsl(220, 91%, 40%), hsl(220, 91%, 25%));
-    --property-card: 222 84% 5%;
-    --price-text: 142 76% 45%;
-    --location-text: 215 20% 65%;
+    --hero-bg: 0 0% 100%;
+    --property-card: 0 0% 100%;
+    --price-text: 45 90% 65%;
+    --location-text: 215 16% 47%;
+    --widget-bg: 210 40% 96%;
+    --widget-hover: 210 40% 92%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(220, 91%, 40%) 0%, hsl(220, 91%, 25%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(222, 84%, 5%) 0%, hsl(217, 33%, 18%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(210, 40%, 98%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(210, 40%, 98%) 100%);
+    --gradient-widget: linear-gradient(145deg, hsl(210, 40%, 96%) 0%, hsl(210, 40%, 98%) 100%);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -135,6 +141,34 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-light;
+  }
+}
+
+/* Luxury Typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+@layer utilities {
+  .luxury-heading {
+    @apply font-playfair font-semibold tracking-wide;
+  }
+  
+  .luxury-subtitle {
+    @apply font-inter font-light tracking-wider;
+  }
+  
+  .netflix-scroll {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .netflix-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .widget-card {
+    background: var(--gradient-widget);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border));
   }
 }
